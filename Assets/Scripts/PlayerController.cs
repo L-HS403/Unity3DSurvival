@@ -42,11 +42,13 @@ public class PlayerController : MonoBehaviour
     private Camera theCamera;
     private Rigidbody myRigid;
     private CapsuleCollider capsuleCollider;
+    private GunController theGunController;
 
     void Start()
     {
         myRigid = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        theGunController = FindObjectOfType<GunController>();
         applySpeed = walkSpeed;
         originPosY = theCamera.transform.localPosition.y;
         applyCrouchPosY = originPosY;
@@ -105,6 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         // 앉은 상태에서 달리기 시 앉은 상태 해제
         if (isCrouch) { Crouch(); }
+        theGunController.CancelFineSight();
         isRun = true;
         applySpeed = runSpeed;
     }
