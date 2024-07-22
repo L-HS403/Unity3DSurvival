@@ -723,6 +723,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCloseWeapon: {fileID: 367552035}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
 --- !u!114 &317077148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +740,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGun: {fileID: 8238909886596894873}
   isFineSightMode: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
   theCam: {fileID: 963194227}
   hit_effect_prefab: {fileID: 3278058307871873663, guid: 54a9ea7359049a541a8d0f0448b48e27, type: 3}
 --- !u!82 &317077149
@@ -891,6 +897,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCloseWeapon: {fileID: 5308751643182216323}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
 --- !u!114 &317077153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +913,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCloseWeapon: {fileID: 5971681770435705589}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
 --- !u!1001 &322259301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3036,6 +3048,7 @@ GameObject:
   - component: {fileID: 980507552}
   - component: {fileID: 980507555}
   - component: {fileID: 980507556}
+  - component: {fileID: 980507557}
   m_Layer: 0
   m_Name: Pig
   m_TagString: NPC
@@ -3220,6 +3233,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &980507557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980507551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208fac50615e77d4f8676e964245b69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewAngle: 120
+  viewDistance: 10
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &983520622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,7 +5761,7 @@ GameObject:
   - component: {fileID: 1826403826}
   - component: {fileID: 1826403825}
   - component: {fileID: 1826403830}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
