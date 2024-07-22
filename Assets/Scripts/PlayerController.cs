@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
 
     // 상태 변수
+    private bool isActivated = true;
     private bool isWalk = false;
     private bool isRun = false;
     private bool isCrouch = false;
@@ -65,13 +66,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        IsGround();
-        TryJump();
-        TryRun();
-        TryCrouch();
-        Move();
-        if (!Inventory.inventoryActivated)
+        if (isActivated && GameManager.canPlayerMove)
         {
+            IsGround();
+            TryJump();
+            TryRun();
+            TryCrouch();
+            Move();
             CameraRotation();
             CharacterRotation();
         }
@@ -79,7 +80,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveCheck();
+        if (isActivated && GameManager.canPlayerMove)
+            MoveCheck();
     }
 
     // 지면 체크
